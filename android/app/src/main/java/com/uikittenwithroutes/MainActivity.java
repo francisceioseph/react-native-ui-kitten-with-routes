@@ -1,6 +1,7 @@
 package com.uikittenwithroutes;
 
 import com.facebook.react.ReactActivity;
+import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +12,10 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "uiKittenWithRoutes";
+  }
+
+  @Override
+  protected void onCreate(Bundle savedInstance) {
+    super.onCreate(null);
   }
 }

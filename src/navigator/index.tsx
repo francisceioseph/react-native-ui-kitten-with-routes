@@ -1,12 +1,21 @@
-// TODO: CREATE APP ROUTES ENUM
+import {NavigationProp, RouteProp} from '@react-navigation/core';
+import {Routes} from '../constants';
 
-// TODO: CREATE THE DETAILS SCREEN PARAMS TYPE
+type TDetailsScreenParams = {
+  albumId: number;
+};
 
-// TODO: CREATE THE TROOT STACK PARAMS TYPE
+export type TRootStackParams = {
+  [Routes.HOME]: undefined;
+  [Routes.DETAILS]: TDetailsScreenParams;
+};
 
-// TODO:CREATE THE STACK NAVIGATOR
+export type TAppNavigation<T extends keyof TRootStackParams> = NavigationProp<
+  TRootStackParams,
+  T
+>;
 
-// TODO: CREATE A GENERIC THAT EXTENDS ROOT STACK PARAMS
-//       FOR APP NAVIGATION PROPS
-
-// TODO: CREATE A GENERIC FOR APP ROUTE PROPS
+export type TAppRoute<T extends keyof TRootStackParams> = RouteProp<
+  TRootStackParams,
+  T
+>;
